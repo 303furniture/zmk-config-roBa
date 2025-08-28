@@ -56,7 +56,7 @@
 
         mkp_LCLK {
             bindings = <&mkp MB1>;
-            key-positions = <18 36>;
+            key-positions = <18 34>;
         };
     };
 

@@ -91,8 +91,7 @@
 &kp TAB           &kp LALT  &kp LEFT_WIN  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
             >;
 
-            // エンコーダー：回転＝マウスホイール（下：スクロールダウン／上：スクロールアップ）
-            sensor-bindings = <&inc_dec_kp &mkp MS_WH_DN &mkp MS_WH_UP>;
+            sensor-bindings = <&inc_dec_kp PAGE_DOWN PG_UP>;
         };
 
         FUNCTION {
@@ -121,8 +120,7 @@
 &trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                                &trans
             >;
 
-            // ARROW層でもホイールに（不要ならこの行を元のLC(PAGE_*)に戻してOK）
-            sensor-bindings = <&inc_dec_kp &mkp MS_WH_DN &mkp MS_WH_UP>;
+            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
         MOUSE {

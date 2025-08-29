@@ -43,6 +43,10 @@
 
 &xiao_serial { status = "disabled"; };
 
+&right_encoder {
+    status = "okay";
+};
+
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";

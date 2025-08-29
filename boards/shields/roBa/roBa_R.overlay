@@ -44,7 +44,7 @@
 &xiao_serial { status = "disabled"; };
 
 &right_encoder {
-    status = "okay";
+    status = "disabled";
 };
 
 &spi0 {

@@ -3,8 +3,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 80  // スクロール量（速い→数値↑、細かく→数値↓）
-
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -101,6 +99,7 @@
             encoder-bindings = <&screenshot>;         // 押すと範囲スクショ
         };
 
-        // … FUNCTION / NUM / ARROW / MOUSE / SCROLL / layer_6 は既存のまま …
+        // FUNCTION / NUM / ARROW / MOUSE / SCROLL / layer_6 はそのまま既存
+        // （省略）
     };
 };

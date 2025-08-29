@@ -95,7 +95,7 @@
 
             // ← エンコーダーをマウスホイールに割り当て
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         FUNCTION {

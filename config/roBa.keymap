@@ -91,7 +91,7 @@
 &kp TAB           &kp LALT  &kp LEFT_WIN  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_DOWN K_SCROLL_UP>;
+            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_DOWN C_AC_SCROLL_UP>;
         };
 
         FUNCTION {

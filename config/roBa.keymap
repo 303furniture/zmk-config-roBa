@@ -75,7 +75,7 @@
             label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <50>; // 速すぎる/飛ぶ時は 45〜50、遅い時は 20〜30 に
+            tap-ms = <40>; // 速すぎる/飛ぶ時は 45〜50、遅い時は 20〜30 に
         };
 
         encoder_test: encoder_test {

@@ -78,12 +78,33 @@
             tap-ms = <40>; // 速すぎる/飛ぶ時は 45〜50、遅い時は 20〜30 に
         };
 
-        screenshot_area: screenshot_area {
+        /* --- ここから スクショ（クリップボード）用 --- */
+
+        /* クリップボードに「範囲選択」（⌃⌘⇧4） */
+        screenshot_area_clip: screenshot_area_clip {
             compatible = "zmk,behavior-macro";
-            label = "SCREENSHOT_AREA";
+            label = "SCREENSHOT_AREA_CLIP";
             #binding-cells = <0>;
-            bindings = <&kp LG(LS(N4))>; // ⌘+Shift+4 を一発で送る
+            bindings = <&kp LC(LG(LS(N4)))>;
         };
+
+        /* クリップボードに「ウィンドウ選択」（⌃⌘⇧4 → Space） */
+        screenshot_window_clip: screenshot_window_clip {
+            compatible = "zmk,behavior-macro";
+            label = "SCREENSHOT_WINDOW_CLIP";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LG(LS(N4)))>, <&kp SPACE>;
+        };
+
+        /* Shift同時押しならウィンドウ版、そうでなければ範囲版に自動切替 */
+        screenshot_clip_mm: screenshot_clip_mm {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SCR_CLIP_MM";
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&screenshot_window_clip>, <&screenshot_area_clip>;
+        };
+        /* --- スクショここまで --- */
     };
 
     keymap {
@@ -94,10 +115,10 @@
 &kp Q             &kp W     &kp E         &kp R                        &kp T                                                           &kp Y        &kp U  &lt 5 I    &kp O    &kp P
 &kp A             &kp S     &kp D         &kp F                        &kp G        &kp LS(LG(S))                      &kp APOSTROPHE  &kp H        &kp J  &kp K      &kp L    &kp MINUS
 &mt LEFT_SHIFT Z  &kp X     &kp C         &kp V                        &kp B        &kp COLON                          &kp SEMICOLON   &kp N        &kp M  &kp COMMA  &kp DOT  &kp QUESTION
-&kp TAB           &kp LALT  &kp LEFT_WIN  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE   &lt 1 ENTER                             &kp DEL
+&kp TAB           &kp LALT  &kp LEFT_WIN  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE   &lt 1 ENTER                             &screenshot_clip_mm
             >;
 
-            // ← エンコーダーをマウスホイールに割り当て
+            // ← エンコーダー回転はスクロール
             sensor-bindings = <&encoder_msc_down_up>;
         };
 

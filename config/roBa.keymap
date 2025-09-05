@@ -78,19 +78,11 @@
             tap-ms = <40>; // 速すぎる/飛ぶ時は 45〜50、遅い時は 20〜30 に
         };
 
-        encoder_test: encoder_test {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "ENC_TEST";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp F14>, <&kp F15>; // 左=F14, 右=F15
-            tap-ms = <50>;
-        };
-
-        // macOS: ⌘ + Shift + 4（範囲選択モード）
         screenshot_area: screenshot_area {
             compatible = "zmk,behavior-macro";
+            label = "SCREENSHOT_AREA";
             #binding-cells = <0>;
-            bindings = <&kp LGUI &kp LSFT &kp N4>;
+            bindings = <&kp LG(LS(N4))>; // ⌘+Shift+4 を一発で送る
         };
     };
 
@@ -107,9 +99,6 @@
 
             // ← エンコーダーをマウスホイールに割り当て
             sensor-bindings = <&encoder_msc_down_up>;
-            
-            // クリック＝範囲スクショ
-            encoder-bindings = <&screenshot_area>;
         };
 
         FUNCTION {
@@ -121,9 +110,6 @@
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
-            
-            // クリック＝範囲スクショ
-            encoder-bindings = <&screenshot_area>;
         };
 
         NUM {
@@ -135,9 +121,6 @@
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
-            
-            // クリック＝範囲スクショ
-            encoder-bindings = <&screenshot_area>;
         };
 
         ARROW {
@@ -158,9 +141,6 @@
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
-            
-            // クリック＝範囲スクショ
-            encoder-bindings = <&screenshot_area>;
         };
 
         SCROLL {
@@ -172,9 +152,6 @@
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
-            
-            // クリック＝範囲スクショ
-            encoder-bindings = <&screenshot_area>;
         };
 
         layer_6 {
@@ -186,9 +163,6 @@
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
-            
-            // クリック＝範囲スクショ
-            encoder-bindings = <&screenshot_area>;
         };
     };
 };

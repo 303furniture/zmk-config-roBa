@@ -42,8 +42,8 @@ layers:
   - {t: SPACE, h: NUM}
   - {t: '&to_layer_0 INT_MUHENKAN', h: ARROW}
   - BACKSPACE
-  - {t: ENTER, h: FUNCTION}
-  - DEL
+  - {t: ENTER, h: SCROLL}
+  - {t: DEL, h: FUNCTION}
   FUNCTION:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

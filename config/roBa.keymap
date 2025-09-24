@@ -118,10 +118,10 @@
 
         default_layer {
             bindings = <
-&kp Q    &kp W     &kp E         &kp R                        &kp T                                                            &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A    &kp S     &kp D         &kp F                        &kp G        &kp ESC                            &kp APOSTROPHE   &kp H        &kp J  &kp K      &kp L    &kp MINUS
-&kp Z    &kp X     &kp C         &kp V                        &kp B        &kp COLON                          &kp SEMICOLON    &kp N        &kp M  &kp COMMA  &kp DOT  &kp QUESTION
-&kp TAB  &kp LALT  &kp LEFT_WIN  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp RIGHT_SHIFT  &lt 1 ENTER                             &lt 5 RCTRL
+&kp Q    &kp W     &kp E         &kp R                        &kp T                                                                  &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A    &kp S     &kp D         &kp F                        &kp G        &kp ESC                            &kp LEFT_PARENTHESIS   &kp H        &kp J  &kp K      &kp L    &kp MINUS
+&kp Z    &kp X     &kp C         &kp V                        &kp B        &kp COLON                          &kp RIGHT_PARENTHESIS  &kp N        &kp M  &kp COMMA  &kp DOT  &kp QUESTION
+&kp TAB  &kp LALT  &kp LEFT_WIN  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp RIGHT_SHIFT        &lt 1 ENTER                             &lt 5 RCTRL
             >;
 
             // ← エンコーダー回転はスクロール
@@ -133,7 +133,7 @@
             bindings = <
 &trans  &kp N7  &kp N8  &kp N9     &trans                                          &kp F1   &kp F2   &kp F3   &kp F4    &kp F5
 &trans  &kp N4  &kp N5  &kp N6     &trans     &trans               &kp UP_ARROW    &kp F6   &kp F7   &kp F8   &kp F9    &kp F10
-&trans  &kp N1  &kp N2  &kp N3     &trans     &trans               &kp DOWN_ARROW  &kp F11  &kp F12  &kp F13  &mkp MB2  &mkp MB1
+&trans  &kp N1  &kp N2  &kp N3     &trans     &kp SEMICOLON        &kp DOWN_ARROW  &kp F11  &kp F12  &kp F13  &mkp MB2  &mkp MB1
 &trans  &kp N0  &trans  &kp LANG2  &kp LANG1  &kp RIGHT_ARROW      &kp BACKSPACE   &kp DEL                              &kp LEFT_ARROW
             >;
 
@@ -142,10 +142,10 @@
 
         NUM {
             bindings = <
-&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                                   &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR            &kp PERCENT
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL                    &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
-&trans                      &trans           &trans           &trans           &trans        &trans                       &kp BACKSPACE   &kp DEL                                                                    &kp PIPE
+&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                                      &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp LEFT_BRACKET   &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR            &kp PERCENT
+&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL                    &kp RIGHT_BRACKET  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
+&trans                      &trans           &trans           &trans           &trans        &trans                       &kp BACKSPACE      &kp DEL                                                                    &kp PIPE
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -154,7 +154,7 @@
         ARROW {
             bindings = <
 &kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                                      &trans  &trans          &trans          &trans    &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans               &kp UP_ARROW  &trans  &mkp MB1        &mkp MB2        &mkp MB3  &trans
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans               &kp UP_ARROW  &trans  &mkp MB1        &mkp MB2        &mkp MB3  &kp UNDERSCORE
 &kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans               &kp DOWN      &trans  &kp LG(LS(N4))  &kp LG(LS(N3))  &trans    &trans
 &trans          &trans                  &trans          &trans                   &trans   &kp RIGHT_ARROW      &trans        &trans                                            &kp LEFT_ARROW
             >;

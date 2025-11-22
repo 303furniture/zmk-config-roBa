@@ -1,1 +1,1 @@
-pixart\tPixArt Imaging Inc.
+pixart	PixArt

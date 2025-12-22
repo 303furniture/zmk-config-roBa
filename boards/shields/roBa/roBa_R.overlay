@@ -1,12 +1,13 @@
 #include "roBa.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &default_transform {
     col-offset = <6>;
 };
 
 &kscan0 {
-    col-gpios =
-          <&xiao_d 10 GPIO_ACTIVE_HIGH>
+    col-gpios
+        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
         , <&xiao_d  9 GPIO_ACTIVE_HIGH>
         , <&xiao_d  8 GPIO_ACTIVE_HIGH>
         , <&xiao_d  7 GPIO_ACTIVE_HIGH>
@@ -25,19 +26,17 @@
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels =
-                <NRF_PSEL(SPIM_SCK,  0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 6)>;
+            psels = <NRF_PSEL(SPIM_SCK,  0, 5)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 6)>;
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
-            psels =
-                <NRF_PSEL(SPIM_SCK,  0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 6)>;
+            psels = <NRF_PSEL(SPIM_SCK,  0, 5)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 6)>;
             low-power-enable;
         };
     };
@@ -55,6 +54,7 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
+
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
     trackball: trackball@0 {
@@ -62,8 +62,14 @@
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
+
+        /* これが無いと今回のエラーになる（必須） */
+        zephyr,axis-x = <INPUT_REL_X>;
+        zephyr,axis-y = <INPUT_REL_Y>;
+
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         motion-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+
         scroll-layers = <5>;
     };
 };

@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-/* 修正点1: 重複定義を避けるため、既存の定義を一度リセットしてから再定義します */
+/* スクロール量を上書き（warning回避） */
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 50
 
@@ -12,20 +12,15 @@
     quick-tap-ms = <0>;
 };
 
-/* 修正点2: トラックボールに必須の motion-gpios を追記 */
-&trackball {
-    status = "okay";
-    motion-gpios = <&gpio0 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    automouse-layer = <4>;
-    scroll-layers = <5>;
-};
-
 / {
-    /* --- 以下、既存の combos, macros, behaviors, keymap をそのまま継続 --- */
     combos {
         compatible = "zmk,combos";
         tab {
             bindings = <&kp TAB>;
             key-positions = <11 12>;
         };
-        // ... (以下、元のファイルと同じ内容が続く)
+        /* ここから下は、あなたの元の combos をそのまま続ける */
+    };
+
+    /* ここから下に macros / behaviors / keymap を元のまま続ける */
+};

@@ -7,6 +7,18 @@
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 50
 
+/* ✅ これが無いと /kscan が col-gpios 無しで死ぬ */
+&kscan0 {
+    status = "okay";
+    col-gpios
+        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 9  GPIO_ACTIVE_HIGH>
+        , <&xiao_d 8  GPIO_ACTIVE_HIGH>
+        , <&xiao_d 7  GPIO_ACTIVE_HIGH>
+        , <&gpio0 10  GPIO_ACTIVE_HIGH>
+        ;
+};
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -19,7 +31,7 @@
             bindings = <&kp TAB>;
             key-positions = <11 12>;
         };
-        /* ここから下は、あなたの元の combos をそのまま続ける */
+        /* ここから下は元の combos を続ける */
     };
 
     /* ここから下に macros / behaviors / keymap を元のまま続ける */

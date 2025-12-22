@@ -3,12 +3,16 @@ description: |
 
 compatible: "pixart,pmw3610"
 
-include: spi-device.yaml
+include:
+  - spi-device.yaml
+  - zephyr,input-device.yaml
 
 properties:
   irq-gpios:
     type: phandle-array
     required: true
+  motion-gpios:
+    type: phandle-array
   scroll-layers:
     type: array
     default: []

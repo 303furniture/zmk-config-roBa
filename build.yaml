@@ -1,3 +1,4 @@
+# GitHub Actions build matrix for ZMK
 ---
 include:
   - board: xiao_ble

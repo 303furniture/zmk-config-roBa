@@ -5,7 +5,6 @@ compatible: "pixart,pmw3610-alt"
 
 include:
   - spi-device.yaml
-  - zephyr,input-device.yaml
 
 properties:
   irq-gpios:

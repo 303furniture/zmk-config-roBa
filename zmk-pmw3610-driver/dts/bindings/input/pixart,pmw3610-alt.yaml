@@ -1,14 +1,28 @@
 description: |
   Sensor driver for the pixart PMW3610 mouse sensor
 
-compatible: "pixart,pmw3610"
+compatible: "pixart,pmw3610-alt"
 
-include: spi-device.yaml
+include:
+  - spi-device.yaml
+  - zephyr,input-device.yaml
 
 properties:
   irq-gpios:
     type: phandle-array
     required: true
+  motion-gpios:
+    type: phandle-array
+  evt-type:
+    type: int
+  x-input-code:
+    type: int
+  y-input-code:
+    type: int
+  zephyr,axis-x:
+    type: int
+  zephyr,axis-y:
+    type: int
   scroll-layers:
     type: array
     default: []

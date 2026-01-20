@@ -127,7 +127,7 @@
             bindings = <
 &kp Q             &kp W      &kp E         &kp R             &kp T                                                               &kp Y    &kp U  &kp I      &kp O    &kp P
 &kp A             &kp S      &kp D         &kp F             &kp G        &kp ESC                         &screenshot_area_clip  &kp H    &kp J  &kp K      &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X      &kp C         &kp V             &kp B        &kp LANGUAGE_2                  &kp LANGUAGE_1         &kp N    &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&mt LEFT_SHIFT Z  &kp X      &kp C         &kp V             &kp B        &kp LANGUAGE_2                  &kp LANGUAGE_1         &kp N    &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT KP_SLASH
 &kp ESCAPE        &kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 SPACE  &lt_to_layer_0 2 BACKSPACE      &lt 3 ENTER            &kp DEL                             &lt 5 TAB
             >;
 
@@ -138,10 +138,10 @@
 
         FUNCTION {
             bindings = <
-&trans  &kp N7  &kp N8  &kp N9     &trans                                          &kp F1   &kp F2   &kp F3   &kp F4    &kp F5
-&trans  &kp N4  &kp N5  &kp N6     &trans     &trans               &kp UP_ARROW    &kp F6   &kp F7   &kp F8   &kp F9    &kp F10
-&trans  &kp N1  &kp N2  &kp N3     &trans     &kp ESCAPE           &kp DOWN_ARROW  &kp F11  &kp F12  &kp F13  &mkp MB2  &mkp MB1
-&trans  &kp N0  &trans  &kp LANG2  &kp LANG1  &kp RIGHT_ARROW      &kp BACKSPACE   &kp DEL                              &kp DEL
+&kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT                                       &kp LEFT_CONTROL  &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&trans           &mkp MB3     &mkp MB2  &mkp MB1    &trans       &trans               &kp UP_ARROW    &kp MINUS         &kp EQUAL      &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp BACKSLASH
+&trans           &trans       &trans    &trans      &trans       &trans               &kp DOWN_ARROW  &mkp MB1          &mkp MB2       &kp SEMICOLON     &kp SQT               &kp GRAVE
+&kp ESC          &trans       &trans    &kp LANG2   &kp LANG1    &kp RIGHT_ARROW      &kp BACKSPACE   &kp DEL                                                                  &kp TAB
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;

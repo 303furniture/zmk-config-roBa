@@ -138,10 +138,10 @@
 
         FUNCTION {
             bindings = <
-&kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT                                       &kp LEFT_CONTROL  &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&trans           &mkp MB3     &mkp MB2  &mkp MB1    &trans       &trans               &kp UP_ARROW    &kp MINUS         &kp EQUAL      &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp BACKSLASH
-&trans           &trans       &trans    &trans      &trans       &trans               &kp DOWN_ARROW  &mkp MB1          &mkp MB2       &kp SEMICOLON     &kp SQT               &kp GRAVE
-&kp ESC          &trans       &trans    &kp LANG2   &kp LANG1    &kp RIGHT_ARROW      &kp BACKSPACE   &kp DEL                                                                  &kp TAB
+&kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT                                &kp LEFT_CONTROL  &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&trans           &mkp MB3     &mkp MB2  &mkp MB1    &trans       &trans             &kp MINUS  &kp EQUAL         &mkp MB1       &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp BACKSLASH
+&trans           &trans       &trans    &trans      &trans       &kp LANG2          &kp LANG1  &trans            &trans         &kp SEMICOLON     &kp SQT               &kp GRAVE
+&kp ESC          &trans       &trans    &kp LANG2   &kp LANG1    &kp BACKSPACE      &kp ENTER  &kp DEL                                                                  &kp TAB
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;

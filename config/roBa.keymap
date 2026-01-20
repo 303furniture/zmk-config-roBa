@@ -125,10 +125,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W      &kp E         &kp R               &kp T                                                               &kp Y    &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S      &kp D         &kp F               &kp G        &kp ESC                         &screenshot_area_clip  &kp H    &kp J  &kp K      &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X      &kp C         &kp V               &kp B        &kp LANGUAGE_2                  &kp LANGUAGE_1         &kp N    &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT KP_SLASH
-&kp ESCAPE        &kp LCTRL  &kp LEFT_ALT  &lt 4 LEFT_COMMAND  &lt 1 SPACE  &lt_to_layer_0 2 BACKSPACE      &lt 3 ENTER            &kp DEL                             &lt 5 TAB
+&kp Q             &kp W      &kp E         &kp R               &kp T                                                               &kp Y      &kp U  &kp I      &kp O    &kp P
+&kp A             &kp S      &kp D         &kp F               &kp G        &kp ESC                         &screenshot_area_clip  &kp H      &kp J  &kp K      &kp L    &kp MINUS
+&mt LEFT_SHIFT Z  &kp X      &kp C         &kp V               &kp B        &kp LANGUAGE_2                  &kp LANGUAGE_1         &kp N      &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT KP_SLASH
+&kp ESCAPE        &kp LCTRL  &kp LEFT_ALT  &lt 4 LEFT_COMMAND  &lt 1 SPACE  &lt_to_layer_0 2 BACKSPACE      &lt 3 ENTER            &lt 6 DEL                             &lt 5 TAB
             >;
 
             // ← エンコーダー回転はスクロール
@@ -160,17 +160,17 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                                                 &trans  &trans          &trans          &trans    &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans               &screenshot_window_clip  &trans  &mkp MB1        &mkp MB2        &mkp MB3  &kp UNDERSCORE
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans               &kp DOWN                 &trans  &kp LG(LS(N4))  &kp LG(LS(N3))  &trans    &kp RS(RA(NUMBER_9))
-&trans          &trans                  &trans          &trans                   &trans   &kp RIGHT_ARROW      &trans                   &trans                                            &kp LEFT_ARROW
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                                        &trans  &trans          &trans          &trans    &trans
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &screenshot_window_clip  &trans  &mkp MB1        &mkp MB2        &mkp MB3  &trans
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans                   &trans  &kp LG(LS(N4))  &kp LG(LS(N3))  &trans    &trans
+&trans          &trans                  &trans          &trans                   &trans   &trans      &trans                   &trans                                            &trans
             >;
         };
 
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;

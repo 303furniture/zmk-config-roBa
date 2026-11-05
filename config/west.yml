@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: 4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85 # ZMK main 2026-10-09 で固定（mainの破壊的変更でビルドが止まるのを防ぐ）
       import: app/west.yml
   self:
     path: config

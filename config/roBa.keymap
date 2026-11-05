@@ -5,9 +5,15 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 50  // スクロール量（速い→数値↑、細かく→数値↓）
 
+// ⇧Z / ⇧/ 用。
+// tapping-term 160ms: 160ms以上押していれば、離す順番に関係なくShift扱い（「z・」化け対策）。
+//   ローマ字の "zu" "zo" 等の素早いロールは160ms未満なので z のまま。
+// require-prior-idle 100ms: 直前100ms以内に打鍵中なら即タップ扱い（連続打鍵中の誤Shift防止）。
 &mt {
     flavor = "balanced";
+    tapping-term-ms = <160>;
     quick-tap-ms = <0>;
+    require-prior-idle-ms = <100>;
 };
 
 // 親指レイヤーキー: tap-preferred(既定) だと200ms待たないとレイヤーが効かず記号入力が遅い。
@@ -154,8 +160,8 @@
             bindings = <
 &kp Q           &kp W      &kp E         &kp R             &kp T                                                               &kp Y         &kp U  &kp I      &kp O    &kp P
 &kp A           &kp S      &kp D         &kp F             &kp G        &kp ESC                         &screenshot_area_clip  &kp H         &kp J  &kp K      &kp L    &kp MINUS
-&kp Z           &kp X      &kp C         &kp V             &kp B        &lt 5 LANGUAGE_2                 &kp LANGUAGE_1         &kp N         &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 SPACE  &lt_to_layer_0 2 BACKSPACE      &lt 3 ENTER            &lt 6 ESCAPE                             &lt 4 TAB
+&mt LEFT_SHIFT Z  &kp X      &kp C         &kp V             &kp B        &lt 5 LANGUAGE_2                 &kp LANGUAGE_1         &kp N         &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&kp ESCAPE      &kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 SPACE  &lt_to_layer_0 2 BACKSPACE      &lt 3 ENTER            &lt 6 DELETE                             &lt 4 TAB
             >;
 
             // ← エンコーダー回転はスクロール

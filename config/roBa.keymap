@@ -92,6 +92,17 @@
     behaviors {
         // 英数キー兼スクロール。tap-preferred: 200ms未満で離せば、次のキーを先に押していても必ず「英数」。
         // スクロールしたいときは少し長押ししてからボールを転がす。
+        // 左下の角：タップでEsc、押しながら他のキーでShift。
+        // Escは文字と続けて打たないので hold-preferred（押している間に他キーを押したら即Shift）で誤爆しにくい。
+        sft_esc: sft_esc {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SFT_ESC";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT>, <&kp ESCAPE>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+        };
+
         lt_eisu: lt_eisu {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_EISU";
@@ -171,8 +182,8 @@
             bindings = <
 &kp Q           &kp W      &kp E         &kp R             &kp T                                                               &kp Y         &kp U  &kp I      &kp O    &kp P
 &kp A           &kp S      &kp D         &kp F             &kp G        &kp ESC                         &screenshot_area_clip  &kp H         &kp J  &kp K      &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X      &kp C         &kp V             &kp B        &lt_eisu 5 LANGUAGE_2           &kp LANGUAGE_1         &kp N         &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp ESCAPE      &kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 SPACE  &lt_to_layer_0 2 BACKSPACE      &lt 3 ENTER            &lt 6 DELETE                             &lt 4 TAB
+&kp Z            &kp X      &kp C         &kp V             &kp B        &lt_eisu 5 LANGUAGE_2           &kp LANGUAGE_1         &kp N         &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&sft_esc        &kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 SPACE  &lt_to_layer_0 2 BACKSPACE      &lt 3 ENTER            &lt 6 DELETE                             &lt 4 TAB
             >;
 
             // ← エンコーダー回転はスクロール
